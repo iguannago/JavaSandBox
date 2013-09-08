@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans>
+
+    <import resource="classpath:/jms/amq/messaging/jms-infrastructure-config.xml"/>
+
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="defaultDestination" ref="testQueue"/>
+    </bean>
+
+    <bean id="testQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="test.queue"/>
+    </bean>
+
+</beans>

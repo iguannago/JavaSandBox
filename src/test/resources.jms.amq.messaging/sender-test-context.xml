@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+    <!-- Imports application configuration -->
+    <import resource="classpath:/jms/amq/messaging/client/client-config.xml"/>
+
+</beans>
