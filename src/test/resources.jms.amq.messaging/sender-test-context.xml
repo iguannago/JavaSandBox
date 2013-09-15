@@ -3,5 +3,10 @@
 
     <!-- Imports application configuration -->
     <import resource="classpath:/jms/amq/messaging/client/client-config.xml"/>
+    <import resource="classpath:/jms/amq/messaging/jms-infrastructure-config.xml"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
 </beans>

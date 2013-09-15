@@ -20,25 +20,18 @@ public class Sender {
 
     @Autowired
     private JmsTemplate jmsTemplate;
-    @Autowired
-    private Queue queue;
 
-    public void setConnectionFactory(ConnectionFactory cf) {
-        this.jmsTemplate = new JmsTemplate(cf);
+    public JmsTemplate getJmsTemplate() {
+        return jmsTemplate;
     }
 
-    public void setQueue(Queue queue) {
-        this.queue = queue;
-    }
-
-    public void simpleSend() {
-        this.jmsTemplate.send(this.queue, new MessageCreator() {
-            public Message createMessage(Session session) throws JMSException {
-                return session.createTextMessage("hello queue world");
-            }
-        });
+    public void send() {
+        CustomMessage message = new CustomMessage();
+        jmsTemplate.convertAndSend(message);
     }
 
 
-
+    private class CustomMessage {
+        private final String text = "Hello, World!";
+    }
 }
