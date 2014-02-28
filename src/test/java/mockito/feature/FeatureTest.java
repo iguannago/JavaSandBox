@@ -1,4 +1,4 @@
-package feature;
+package mockito.feature;
 
 import org.junit.Assert;
 import org.junit.Before;

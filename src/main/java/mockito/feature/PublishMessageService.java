@@ -1,4 +1,4 @@
-package feature;
+package mockito.feature;
 
 /**
  * Created by dcrespo on 28/02/14.
